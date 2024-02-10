@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MangDownloader</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="./css/customscroller.css" rel="stylesheet">
+	<style>
+		.ignoreWrap {
+			word-break: break-all;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<h3 id="titleText" class="ignoreWrap text-center">Title</h3>
+	</div>
+	<nav class="navbar">
+		<div class="container-fluid">
+			<a id="backLink" class="navbar-brand bi bi-arrow-left"></a>
+			<div class="row mx-1 my-2 justify-content-between align-middle">
+				<select id="chapSelector" class="col-auto custom-select custom-select-sm"></select>
+				<div class="col-auto">
+					<button id="pB1" class="btn btn-md btn-secondary" onclick="prev()"><i class="bi bi-arrow-left"></i></button>
+					<button id="nB1" class="btn btn-md btn-secondary" onclick="next()"><i class="bi bi-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--<div class="container">
+		
+	</div>-->
+	<!--<br>-->
+	<!--<br>-->
+	<div id="imglist" class="container-fluid w-100 h-auto m-0 p-0">
+		<!--<img src="./unsplash.jpg" class="my-1 img-fluid w-100 h-auto p-0 m-0" loading="lazy" alt="">
+		<img src="./unsplash.jpg" class="my-1 img-fluid w-100 h-auto p-0 m-0" loading="lazy" alt="">
+		-->
+	</div>
+	<nav id="bottomTool" class="d-none navbar">
+		<div class="container-fluid">
+			<a id="backLinkDummy" class="navbar-brand bi bi-arrow-left"></a>
+			<div class="row mx-1 my-2 justify-content-between align-middle">
+				<select id="chapDummy" class="col-auto custom-select custom-select-sm"></select>
+				<div class="col-auto">
+					<button id="pB2" class="btn btn-md btn-secondary" onclick="prev()"><i class="bi bi-arrow-left"></i></button>
+					<button id="nB2" class="btn btn-md btn-secondary" onclick="next()"><i class="bi bi-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<nav id="navloadIndicator" class="navbar fixed-bottom bg-body-tertiary">
+		<div class="container-fluid justify-content-center">
+			<a id="aloadIndicator" class="navbar-brand" href="#">Loading...</a>
+		</div>
+	</nav>
+	<script defer src="./js/bootstrap.min.js"></script>
+	<script defer src="./js/idquery.js"></script>
+	<script defer src="./js/reader.js"></script>
+</body>
+</html>

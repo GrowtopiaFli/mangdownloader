@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MangDownloader</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="./css/customscroller.css" rel="stylesheet">
+	<style>
+		.ignoreWrap {
+			word-break: break-all;
+		}
+
+		.btn-circle.btn-sm { 
+            width: 30px; 
+            height: 30px; 
+            padding: 6px 0px; 
+            border-radius: 15px; 
+            font-size: 8px; 
+            text-align: center; 
+        } 
+        .btn-circle.btn-md { 
+            width: 50px; 
+            height: 50px; 
+            padding: 7px 10px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            text-align: center; 
+        } 
+        .btn-circle.btn-xl { 
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            font-size: 16px; 
+            text-align: center; 
+        } 
+	</style>
+</head>
+<body>
+	<!-- align-middle -->
+	<div>
+	<table class="text-center table table-bordered table-striped my-3">
+		<thead>
+			<tr>
+				<th class="col-6">Title</th>
+				<th class="col-4">UUID</th>
+				<th class="col-2">Action</th>
+			</tr>
+		</thead>
+		<tbody id="dataInsertion" class="ignoreWrap"></tbody>
+	</table>
+	<br>
+	<br>
+	<nav class="navbar navbar-light bg-light fixed-bottom justify-content-center">
+		<button class="btn btn-secondary btn-circle btn-md" onclick="redirectAdd()"><i class="bi bi-plus"></i></button>
+	</nav>
+	</div>
+	<div class="modal" id="delModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modLabel">Delete Source</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p id="warnText" class="ignoreWrap"></p>
+					<div class="my-3 form-check">
+						<input id="permDel" class="form-check-input" type="checkbox" value="" id="delConf" onchange="document.getElementById('delBtn').disabled = !this.checked;">
+						<label class="form-check-label" for="delConf">I understand that deleting is permanent and cannot be undone</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="delBtn" class="btn btn-danger" disabled>Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script defer src="./js/bootstrap.bundle.min.js"></script>
+	<script defer src="./js/index.js"></script>
+</body>
+</html>
