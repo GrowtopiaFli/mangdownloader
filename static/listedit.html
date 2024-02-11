@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MangDownloader</title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="./css/customscroller.css" rel="stylesheet">
+	<style>
+		.ignoreWrap {
+			word-break: break-all;
+		}
+
+		.warn-tooltip {
+			--bs-tooltip-bg: var(--bs-gray-900);
+		}
+
+		textarea {
+			height: 0px;
+			resize: none;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="container-fluid">
+			<a class="navbar-brand bi bi-arrow-left" id="redirectAnchor"></a>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="card mb-3 justify-center">
+			<div class="card-header">MangDownloader</div>
+			<div class="card-body">
+				<h2 id="editTitle" class="card-title text-center">Edit source</h2>
+				<br>
+				<label class="alert alert-danger opacity-50">! <b>WARNING</b>: THIS OPERATION IS UNCANCELLABLE<br><br>! Make sure that you <b>UNDERSTAND</b> what you're doing as this process can be <b>IRREVERSIBLE</b> and take a while depending on your input parameters:<br><br>! It will download changed/added chapters and won't remove cached information once deleting from the list. (Do it <b>MANUALLY</b>)</label>
+				<!--
+				<div class="form-floating">
+					<label class="fs-5">Enter modifications here:</label>
+					<!--<input type="text" id="nameConv" placeholder class="form-control" value="title + &quot; - c&quot; + pad(c, 3) + &quot; (v&quot; + pad(v, 2) + &quot;) - p&quot; + pad(p, 5) + &quot; [GWeb]&quot;" />
+					<label for="nameConv">Naming Convention</label>--
+				</div>-->
+				<div class="input-group">
+					<!--<span class="input-group-text">List<br>Modifications</span>-->
+					<textarea class="form-control" id="modInput" placeholder="List modifications here" aria-label="With textarea" wrap="off"></textarea>
+				</div>
+				<br>
+				<button class="btn btn-outline-danger float-end" id="editBtn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="warn-tooltip bg-opacity-10" data-bs-title="This process can take a while depending on the scope of your modifications." onclick="editqueue()">Save Changes</button>
+				<br>
+			</div>
+			<div class="card-footer text-center text-muted">
+				Made by GWeb using Bootstrap
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="msgModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered model-dialog-scrollable">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="staticBackdropLabel">Queuing Edit</h1>
+			</div>
+			<div id="modalInfo" class="modal-body text-center">
+			</div>
+			</div>
+		</div>
+	</div>
+	<script defer src="./js/bootstrap.bundle.min.js"></script>
+	<script defer src="./js/idquery.js"></script>
+	<script defer src="./js/listedit.js"></script>
+</body>
+</html>

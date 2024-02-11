@@ -29,6 +29,7 @@ function dismissal() {
 }
 
 window.api.on("cProgress", (event, args) => {
+	//console.log(args);
 	dwnModIndicator.textContent = `Cached Chapters ${args[0]} / ${args[1]}`;
 	pBar2.style.width = `${args[0] / args[1] * 100}%`;
 })
@@ -85,6 +86,7 @@ if (runQueryCheck()) {
 	</td>
 </tr>`;
 			})
+			document.getElementById("editListBtn").onclick = () => {window.location.href = `./listedit.html?id=${params.id}&title=${btoa(volumeInformation.title)}`};
 		}
 	})
 } else {
