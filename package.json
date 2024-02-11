@@ -1,74 +1,75 @@
 {
-  "name": "mangdownloader",
-  "version": "1.0.0",
-  "type": "module",
-  "engines": {
-    "node": ">=16"
+ "name": "mangdownloader",
+ "version": "1.0.0",
+ "type": "module",
+ "engines": {
+  "node": ">=16"
+ },
+ "author": "DeveloVoosh GWeb",
+ "description": "A manga scraper/downloader.",
+ "exports": "index.js",
+ "license": "AGPL-3.0-only",
+ "scripts": {
+  "start": "electron --trace-warnings .",
+  "pack": "electron-builder --win --x64 --dir",
+  "dist": "electron-builder --win --x64"
+ },
+ "devDependencies": {
+  "electron": "^28.2.2",
+  "electron-builder": "^24.9.1"
+ },
+ "dependencies": {
+  "child_process": "^1.0.2",
+  "crypto": "^1.0.1",
+  "express": "^4.18.2",
+  "http": "^0.0.1-security",
+  "https": "^1.0.0",
+  "image-type": "^5.2.0",
+  "level": "^8.0.1",
+  "node-html-parser": "^6.1.12",
+  "node-notifier": "^10.0.1",
+  "path": "^0.12.7",
+  "read-chunk": "^4.0.3",
+  "regedit": "^5.1.2",
+  "safe-evaluate-expression": "^1.7.3"
+ },
+ "build": {
+  "appId": "com.gwebdev.mangdownloader",
+  "productName": "MangDownloader",
+  "files": [
+   "static/**/*",
+   "index.js",
+   "package.json",
+   "node_modules/**/*",
+   "preload/**/*"
+  ],
+  "extraResources": [
+   {
+    "from": "./node_modules/regedit/vbs",
+    "to": "regedit/vbs",
+    "filter": [
+     "**/*"
+    ]
+   },
+   {
+    "from": "./resources/icons",
+    "to": "icons",
+    "filter": [
+     "**/*"
+    ]
+   }
+  ],
+  "win": {
+   "target": "nsis",
+   "icon": "./resources/icons/md.ico"
   },
-  "author": "DeveloVoosh GWeb",
-  "description": "A manga scraper/downloader.",
-  "exports": "index.js",
-  "license": "AGPL-3.0-only",
-  "scripts": {
-    "start": "electron --trace-warnings .",
-    "pack": "electron-builder --win --x64 --dir",
-    "dist": "electron-builder --win --x64"
-  },
-  "devDependencies": {
-    "electron": "^28.2.2",
-    "electron-builder": "^24.9.1"
-  },
-  "dependencies": {
-    "crypto": "^1.0.1",
-    "express": "^4.18.2",
-    "http": "^0.0.1-security",
-    "https": "^1.0.0",
-    "image-type": "^5.2.0",
-    "level": "^8.0.1",
-    "node-html-parser": "^6.1.12",
-    "node-notifier": "^10.0.1",
-    "path": "^0.12.7",
-    "read-chunk": "^4.0.3",
-    "regedit": "^5.1.2",
-    "safe-evaluate-expression": "^1.7.3"
-  },
-  "build": {
-    "appId": "com.gwebdev.mangdownloader",
-	"productName": "MangDownloader",
-    "files": [
-	  "static/**/*",
-	  "index.js",
-	  "package.json",
-      "node_modules/**/*",
-	  "preload/**/*"
-    ],
-	"extraResources": [
-		{
-			"from": "./node_modules/regedit/vbs",
-			"to": "regedit/vbs",
-			"filter": [
-				"**/*"
-			]
-		},
-		{
-			"from": "./resources/icons",
-			"to": "icons",
-			"filter": [
-				"**/*"
-			]
-		}
-	],
-    "win": {
-	  "target": "nsis",
-      "icon": "./resources/icons/md.ico"
-    },
-	"nsis": {
-		"oneClick": false,
-		"installerIcon": "./resources/icons/md.ico",
-		"uninstallerIcon": "./resources/icons/md.ico",
-		"uninstallDisplayName": "MangDownloader 1.0.0",
-		"license": "./LICENSE.md",
-		"allowToChangeInstallationDirectory": true
-	}
+  "nsis": {
+   "oneClick": false,
+   "installerIcon": "./resources/icons/md.ico",
+   "uninstallerIcon": "./resources/icons/md.ico",
+   "uninstallDisplayName": "MangDownloader 1.0.0",
+   "license": "./LICENSE.md",
+   "allowToChangeInstallationDirectory": true
   }
+ }
 }

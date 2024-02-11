@@ -18,6 +18,7 @@ import evaluate from "safe-evaluate-expression";
 import notifier from "node-notifier";
 //import { release } from "node:os";
 import regedit from "regedit";
+import cp from "node:child_process";
 
 const shellFolders = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders";
 const docsVal = "Personal";
@@ -55,7 +56,10 @@ if (isSingleInstance) {
 			progInit();
 			return;
 		}
-		dataFolder = path.join(Object.values(regResult)[0].values[docsVal].value, dataFolders[0]);
+
+		dataFolder = cp.execSync(`cmd /c echo ${path.join(Object.values(regResult)[0].values[docsVal].value, dataFolders[0])}`).toString().replaceAll("\r", "").replaceAll("\n", "");
+		console.log(dataFolder);
+
 		progInit();
 	});
 
