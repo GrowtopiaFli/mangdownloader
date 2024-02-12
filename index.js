@@ -738,7 +738,7 @@ if (isSingleInstance) {
 				db.keys().all().then((keys) => {
 					if (keys.includes(args.id)) {
 						let paths = fetchIdPaths(args.id);
-						pushNotify(`Editing files of ${args.id}`);
+						//pushNotify(`Editing files of ${args.id}`);
 						try {
 							let listData = JSON.parse(fs.readFileSync(paths.volumes));
 							let metaData = JSON.parse(fs.readFileSync(paths.meta));
