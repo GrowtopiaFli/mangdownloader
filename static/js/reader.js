@@ -108,7 +108,8 @@ function init() {
 				prev = () => {
 					let urlForge = `./reader.html?id=${params.id}&chap=`;
 					if (ci == 0) {
-						urlForge += fullData[vi - 1][1][0][1];
+						let cinfo = fullData[vi - 1][1];
+						urlForge += cinfo[cinfo.length - 1][1];
 					} else {
 						urlForge += volData[ci - 1];
 					}

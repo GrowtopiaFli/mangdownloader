@@ -1,6 +1,6 @@
 {
  "name": "mangdownloader",
- "version": "1.0.0",
+ "version": "1.0.1",
  "type": "module",
  "engines": {
   "node": ">=16"
@@ -33,6 +33,7 @@
  },
  "build": {
   "appId": "com.gwebdev.mangdownloader",
+  "artifactName": "mangdownloader-${version}-win64-setup.${ext}",
   "productName": "MangDownloader",
   "files": [
    "static/**/*",
