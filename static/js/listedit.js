@@ -36,6 +36,9 @@ if (runQueryCheck() && isBase64(params.title)) {
 		console.log("well shit");
 		// this is what you bitches get for tampering with stuff you don't understand smh, it's taken me like 7 hours to add this feature
 		window.alert("A fatal error has occured in the edit query process, this is bad for a lot of reasons:\n- This database may be corrupted\n- This source may not work again if the database has been corrupted\n- The program may not work properly\nPlease understand what you're doing before fiddling with this operation\n(unless you are a developer or something)\n\nNOTE: This program is still buggy and in its beta stages. Ask a dev for further solutions or workarounds that you may need to do if the database has been corrupted!");
+		setTimeout(() => {
+			msgModal.hide();
+		}, 2000)
 	})
 	
 	window.api.on("successQuery", (event, args) => {
